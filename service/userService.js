@@ -1,4 +1,4 @@
-const userDao = require('../dao/userDao.js')
+const userDao = require('../dao/userDao')
 
 // Cadastro de usuário, validações, verificação de duplicidade
 const checkUser = async (usuario) =>{
@@ -48,11 +48,17 @@ const addSkill = async (cd_id, cd_skill) => {
 }
 
 const getUser = (cd_id) => {
+
     return userDao.getUser(cd_id)
 }
 
-const allUser = () => {
-    return userDao.allUser()
+const allUser = async () => {
+    const result = await userDao.allUser()
+    result.forEach(user => {
+        user.nm_skills = user.nm_skills.split(",")
+    })
+
+    return result
 }
 
 const query = (query) =>{
