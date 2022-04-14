@@ -1,4 +1,4 @@
-const userDao = require('../dao/userDao')
+const userDao = require('../dao/userDao.js')
 
 // Cadastro de usuário, validações, verificação de duplicidade
 const checkUser = async (usuario) =>{

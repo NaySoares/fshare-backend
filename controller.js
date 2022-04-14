@@ -14,6 +14,10 @@ const port = 3001;
 app.use(bP.urlencoded({ extended: true }))
 app.use(cors(corsOptions))
 
+app.get('/', async (req, res) => {
+  return res.json({"message": "Hello, world!"});
+})
+
 // Cadastro usuario
 app.post('/userSignUp', (req, res) => {
   const usuario = req.body // recebe como obj os valores 
