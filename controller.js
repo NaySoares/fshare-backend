@@ -55,3 +55,4 @@ app.get('/query/:nm_skills', (req, resp) => {
 })
 
 app.listen(process.env.PORT || port, () => console.log(`Conexao Express Bem sucedida na porta ${port}`))
+
