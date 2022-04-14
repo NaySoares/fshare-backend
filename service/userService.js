@@ -16,7 +16,7 @@ const checkUser = async (usuario) =>{
 }
 
 const create = async (usuario) => {
-    const resultCheckUser = await checkUser(usuario)
+    const resultCheckUser = {id:1}
     console.log(resultCheckUser)
     if (resultCheckUser.id) { 
         resultCheckUser.cd_id = await userDao.cadastrar(usuario)
