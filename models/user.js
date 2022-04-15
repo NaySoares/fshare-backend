@@ -20,7 +20,7 @@ const user = db.define(
         },
         nm_description: {
             type: Sequelize.STRING, //definir tamanho...
-            allowNull: false
+            allowNull: true
         },
         nm_role: {
             type: Sequelize.STRING,
@@ -49,4 +49,4 @@ const user = db.define(
 //Para criação da tabela em primeiro momento, caso não exista:
 //user.sync().then(() => console.log('Tabela Criada'))
 
-module.exports =user;
+module.exports = user;
